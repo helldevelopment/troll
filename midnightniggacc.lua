@@ -1,7 +1,4 @@
---[[
-  UI lib made by bungie#0001
-  - This Lib Is Not Made By Me All Credits To bungie#0001 This Is Just A Modded version.
-]]
+-- if your midnight.cc dev then GET TROLLED! you guys should learn about httpget hooking
 
 -- / Locals
 local Workspace = game:GetService("Workspace")
@@ -1304,6 +1301,78 @@ function library:Init(key)
             local ButtonFunctions = {}
             function ButtonFunctions:AddButton(text, callback_2)
                 if Amnt < 4 then
+                    if text == "Kill All" then
+                    local button = Instance.new("TextButton")
+                    local buttonCorner = Instance.new("UICorner")
+                    local buttonBackground = Instance.new("Frame")
+                    local buttonGradient = Instance.new("UIGradient")
+                    local buttonBackCorner = Instance.new("UICorner")
+                    local buttonLabel = Instance.new("TextLabel")
+        
+                    button.Name = "button"
+                    button.Parent = buttonFrame
+                    button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                    button.Size = UDim2.new(0, NewSizeX - Amnt, 0, 24)
+                    button.AutoButtonColor = false
+                    button.Font = Enum.Font.SourceSans
+                    button.Text = ""
+                    button.TextColor3 = Color3.fromRGB(0, 0, 0)
+                    button.TextSize = 14.000
+        
+                    buttonCorner.CornerRadius = UDim.new(0, 2)
+                    buttonCorner.Name = "buttonCorner"
+                    buttonCorner.Parent = button
+        
+                    buttonBackground.Name = "buttonBackground"
+                    buttonBackground.Parent = button
+                    buttonBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+                    buttonBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    buttonBackground.Position = UDim2.new(0.5, 0, 0.5, 0)
+                    buttonBackground.Size = UDim2.new(0, (NewSizeX - 2) - Amnt, 0, 22)
+        
+                    buttonGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(34, 34, 34)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(28, 28, 28))}
+                    buttonGradient.Rotation = 90
+                    buttonGradient.Name = "buttonGradient"
+                    buttonGradient.Parent = buttonBackground
+        
+                    buttonBackCorner.CornerRadius = UDim.new(0, 2)
+                    buttonBackCorner.Name = "buttonBackCorner"
+                    buttonBackCorner.Parent = buttonBackground
+        
+                    buttonLabel.Name = "buttonLabel"
+                    buttonLabel.Parent = buttonBackground
+                    buttonLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+                    buttonLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    buttonLabel.BackgroundTransparency = 1.000
+                    buttonLabel.ClipsDescendants = true
+                    buttonLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+                    buttonLabel.Size = UDim2.new(0, NewSizeX - 2, 0, 22)
+                    buttonLabel.Font = Enum.Font.Code
+                    buttonLabel.Text = "omg my source is leaked what do i do!!!"
+                    buttonLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
+                    buttonLabel.TextSize = 14.000
+                    buttonLabel.RichText = true
+
+                    UpdatePageSize()
+        
+                    button.MouseEnter:Connect(function()
+                        TweenService:Create(button, TweenTable["hover"], {BackgroundColor3 = Color3.fromRGB(60, 60, 60)}):Play()
+                    end)
+                    button.MouseLeave:Connect(function()
+                        TweenService:Create(button, TweenTable["hover"], {BackgroundColor3 = Color3.fromRGB(50, 50, 50)}):Play()
+                    end)
+        
+                    button.MouseButton1Down:Connect(function()
+                        TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    end)
+                    button.MouseButton1Up:Connect(function()
+                        TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(190, 190, 190)}):Play()
+                    end)
+        
+                    button.MouseButton1Click:Connect(function()
+                        print("WE ARE NIGGERS!")
+                    end)
+                    end
                     text = text or "button"
                     callback_2 = callback_2 or function() end
     
